@@ -12,7 +12,7 @@ let now: Date = new Date();
 // FOR AN ARRAY OF STRINGS
 let colors: string[] = ['red', 'green', 'blue'];
 // FOR AN ARRAY OF NUMBERS
-let numbers: number[] = [1, 2, 3, 4, 5];
+let myNumbers: number[] = [1, 2, 3, 4, 5];
 // FOR AN ARRAY OF BOOLS
 let truths: boolean[] = [true, true, false];
 
@@ -45,4 +45,12 @@ for (let i = 0; i < words.length; i++) {
   if (words[i] === 'green') {
     foundWord = true;
   }
+}
+
+// [3] VARIABLE WHOSE TYPE CANNOT BE INFERRED CORRECTLY
+const numbers = [-10, -1, 12];
+// EITHER BOOLEAN OR NUMBER
+let numberAboveZero: boolean | number = false;
+for (let i = 0; i < numbers.length; i++) {
+  numberAboveZero = numbers[i];
 }
