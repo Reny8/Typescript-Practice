@@ -25,3 +25,15 @@ let point: { x: number; y: number } = {
   x: 10,
   y: 20,
 };
+
+// FUNCTION ANNOTATION
+// WHAT ARGUMENTS THE FUNCTION WILL TAKE AND WHAT TYPES WILL BE RETURNED
+// EXAMPLE THAT TAKES IN A NUMBER AND RETURNS NOTHING
+const logNumber: (i: number) => void = (i: number) => {
+  console.log(i);
+};
+
+// WHEN TO USE ANNOTATIONS
+// [1] FUNCTION THAT RETURNS THE ANY TYPE
+const json = '{"x": 10, "y":20}';
+const coordinates: { x: number; y: number } = JSON.parse(json);
