@@ -1,20 +1,18 @@
+interface Reportable {
+    summary(): string
+}
+
+// OLDCIVIC STATISIFIES THE REPORTABLE INTERFACE BECAUSE IT HAS THE SUMMARY FUNCTION ALL OTHER FIELDS WILL NOT BE CHECKED
 const oldCivic = {
     name: 'civic',
     year: 2000,
-    broken: true
+    broken: true,
+    summary(): string {
+        return `Name: ${this.name}`
+    }
 }
-
-interface Vehicle {
-    name: string,
-    year: number,
-    broken: boolean
-}
-const printVehicle = (vehicle: Vehicle): void => {
-    console.log(`
-    Name: ${vehicle.name}
-    Year: ${vehicle.year}
-    Broken? ${vehicle.broken}
-`)
+const printVehicle = (vehicle: Reportable): void => {
+    console.log(vehicle.summary())
 }
 
 printVehicle(oldCivic)
