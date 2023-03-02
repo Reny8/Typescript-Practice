@@ -11,8 +11,18 @@ const oldCivic = {
         return `Name: ${this.name}`
     }
 }
-const printVehicle = (vehicle: Reportable): void => {
-    console.log(vehicle.summary())
+
+const myDrink = {
+color: 'brown',
+carbonateed: true,
+sugar: 40,
+summary(): string {
+    return `My drink has ${this.sugar} grams of sugar`
+}
+}
+const printSummary = (item: Reportable): void => {
+    console.log(item.summary())
 }
 
-printVehicle(oldCivic)
+printSummary(oldCivic)
+printSummary(myDrink)
