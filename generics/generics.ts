@@ -19,3 +19,15 @@ class ArrayOfItems<T> {
     return this.collection[index];
   }
 }
+
+const stringArray = new ArrayOfItems(["a", "b", "c"]);
+const numberArray = new ArrayOfItems([1, 2, 3]);
+
+// EXAMPLE OF GENERICS WITH FUNCTIONS
+function printItems<T>(array: T[]): void {
+  array.map((item) => {
+    console.log(item);
+  });
+}
+printItems([1, 2, 4]);
+printItems(["a", "b", "c"]);
