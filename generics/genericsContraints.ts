@@ -1,8 +1,8 @@
 // THIS FILE CONTAINS EXAMPLES OF GENERIC CONTRAINTS USING TS
 
-class Car {
+class Truck {
   print() {
-    console.log("I am a car");
+    console.log("I am a truck");
   }
 }
 
@@ -21,4 +21,9 @@ function whatAreTheItems<T extends Printable>(array: T[]): void {
   });
 }
 
-whatAreTheItems<House | Car>([new House(), new Car(), new Car(), new House()]);
+whatAreTheItems<House | Truck>([
+  new House(),
+  new Truck(),
+  new Truck(),
+  new House(),
+]);
